@@ -4,11 +4,11 @@ const massive = require("massive");
 
 const app = express();
 
-const { SERVER_PORT, CONNECTING_STRING } = process.env;
+const { SERVER_PORT, CONNECTION_STRING } = process.env;
 // execute some logic when the promise is fulfilled, so chain a .then to it
 // capture db instance in the first parameter
-// set dbInstance onto app and have function return app.set
-massive(CONNECTING_STRING)
+// set dbInstance onto app and have function return app.se
+massive(CONNECTION_STRING)
   .then(dbInstance => {
     app.set("db", dbInstance);
   })
